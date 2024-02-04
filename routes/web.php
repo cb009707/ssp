@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HomeCon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,13 +21,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/",[HomeCon::class,"index"]);
 
+
+
+
+
+
+
+//Route::get("/redirects",[HomeCon::class,"redirects"]);
+
 Route::get("/about",function(){
     return view('pages.about');
 });
 
-Route::get("/furnitures",function(){
-    return view('pages.furnitures');
-});
 
 Route::get("/contact",function(){
     return view('pages.contact');
@@ -39,8 +46,43 @@ Route::get("/testimonial",function(){
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
-])->group(function () {
+])
+->prefix('admin')
+->name('admin.')
+->group(function () {
+    
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    
+    Route::resource('user', \App\Http\Controllers\usercon::class);
+    
+    Route::resource('booking', \App\Http\Controllers\BookingController::class);
 }); 
+
+
+Route::put('/booking/{booking}', [BookingController::class, 'update'])->name('booking.update');
+
+Route::get('/booking', [
+    BookingController::class,
+    'frontEndForm'
+])->name('booking.form');
+
+Route::post('/booking', [
+    BookingController::class,
+    'store'
+])->name('booking.store');
+
+// Route::resource('productcategory', \app\Http\Controllers\ProductController::class);
+
+//  Route::get('/booking',function(){
+//      $bookings = DB::table('bookings')->get();
+//      dd($bookings);
+//      return view('admin.user.userdataform');
+//  });
+
+// Route::get('/',function(){
+//          $bookings = DB::table('bookings')->get();
+//         return view('admin.user.details',[
+//                  'bookings' => $bookings]);
+//       });

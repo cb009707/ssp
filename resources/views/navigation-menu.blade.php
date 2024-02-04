@@ -228,7 +228,7 @@
                 <div class="full">
                    <div class="center-desk">
                       <div class="logo">
-                         <a href="/"><img src="images/logo1.png" alt="#" /></a>
+                         <a href="/"><img src="{{ asset('images/logo1.png') }}" alt="#" /></a>
                       </div>
                    </div>
                 </div>
@@ -247,7 +247,7 @@
                             <a class="nav-link" href="/about">About</a>
                          </li>
                          <li class="nav-item">
-                            <a class="nav-link" href="/furnitures">Book Now</a>
+                            <a class="nav-link" href="/booking">Book Now</a>
                          </li>
                          <li class="nav-item">
                             <a class="nav-link" href="/testimonial">Testimonial</a>
@@ -259,12 +259,12 @@
                             @if (Route::has('login'))
            <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10" >
                @auth
-                   <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                   <li class="nav-link"><a href="{{ route('admin.dashboard') }}" class="font-semibold hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a></li>
                @else
-                  <li class="nav-link"><i class="fa fa-user-circle padd_right" aria-hidden="true"></i> <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a></li>
+                  <li class="nav-link"><i class="fa fa-user-circle padd_right" aria-hidden="true"></i> <a href="{{ route('login') }}" class="font-semibold hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a></li>
 
                    @if (Route::has('register'))
-                   <li class="nav-link"><i class="fa fa-user-circle padd_right" aria-hidden="true"></i><a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a></li>
+                   <li class="nav-link"><i class="fa fa-user-circle padd_right" aria-hidden="true"></i><a href="{{ route('register') }}" class="ml-4 font-semibold hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a></li>
                    @endif
                @endauth
            </div>

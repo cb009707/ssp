@@ -268,7 +268,7 @@
                                           <i><img src="images/tes.jpg" alt="#"/></i>
                                           <h4>JCKOLO</h4>
                                           <span>(It is a long )</span>
-                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as </p>
+                                          <p>It was as though we had an accomplished co-founder on our side. We are rapidly expanding after using it to refine our concept and secure our first investment. To date, we have raised over £5 million. </p>
                                        </div>
                                     </div>
                                     <div class="col-md-6 margin_boot">
@@ -276,7 +276,7 @@
                                           <i><img src="images/tes1.jpg" alt="#"/></i>
                                           <h4>ROCOYO</h4>
                                           <span>(It is a long )</span>
-                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as </p>
+                                          <p>It was as though we had an accomplished co-founder on our side. We are rapidly expanding after using it to refine our concept and secure our first investment. To date, we have raised over £5 million. </p>
                                        </div>
                                     </div>
                                  </div>
@@ -292,7 +292,7 @@
                                           <i><img src="images/tes.jpg" alt="#"/></i>
                                           <h4>JCKOLO</h4>
                                           <span>(It is a long )</span>
-                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as </p>
+                                          <p>It was as though we had an accomplished co-founder on our side. We are rapidly expanding after using it to refine our concept and secure our first investment. To date, we have raised over £5 million. </p>
                                        </div>
                                     </div>
                                     <div class="col-md-6 margin_boot">
@@ -300,7 +300,7 @@
                                           <i><img src="images/tes1.jpg" alt="#"/></i>
                                           <h4>ROCOYO</h4>
                                           <span>(It is a long )</span>
-                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as </p>
+                                          <p>It was as though we had an accomplished co-founder on our side. We are rapidly expanding after using it to refine our concept and secure our first investment. To date, we have raised over £5 million.</p>
                                        </div>
                                     </div>
                                  </div>
@@ -316,7 +316,7 @@
                                           <i><img src="images/tes.jpg" alt="#"/></i>
                                           <h4>JCKOLO</h4>
                                           <span>(It is a long )</span>
-                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as </p>
+                                          <p>It was as though we had an accomplished co-founder on our side. We are rapidly expanding after using it to refine our concept and secure our first investment. To date, we have raised over £5 million. </p>
                                        </div>
                                     </div>
                                     <div class="col-md-6 margin_boot">
@@ -324,7 +324,7 @@
                                           <i><img src="images/tes1.jpg" alt="#"/></i>
                                           <h4>ROCOYO</h4>
                                           <span>(It is a long )</span>
-                                          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as </p>
+                                          <p>It was as though we had an accomplished co-founder on our side. We are rapidly expanding after using it to refine our concept and secure our first investment. To date, we have raised over £5 million.</p>
                                        </div>
                                     </div>
                                  </div>

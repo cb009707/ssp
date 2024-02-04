@@ -11,9 +11,9 @@
              </div>
              <div class="col-md-8">
                 <ul class="location_icon">
-                   <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Locatins</li>
-                   <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +71 9087654321</li>
-                   <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>demo@gmail.com</li>
+                  <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Colombo 7</li>
+                       <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +71 932332321</li>
+                       <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>tango@gmail.com</li>
                 </ul>
              </div>
              <div class="col-md-6">
@@ -61,7 +61,7 @@
           <div class="container">
              <div class="row">
                 <div class="col-md-12">
-                   <p>Copyright 2019 All Right Reserved By <a href="https://html.design/"> Free  html Templates</a></p>
+                   <p>Copyright 2019 All Right Reserved By Tango Mobile Car Sevice</a></p>
                 </div>
              </div>
           </div>

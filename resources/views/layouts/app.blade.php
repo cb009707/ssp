@@ -15,15 +15,15 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <!-- bootstrap css -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
         <!-- style css -->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="/css/style.css">
         <!-- Responsive-->
-        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="/css/responsive.css">
         <!-- fevicon -->
         <link rel="icon" href="images/fevicon.png" type="image/gif" />
         <!-- Scrollbar Custom CSS -->
-        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
         <!-- Tweaks for older IEs-->
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
@@ -58,9 +58,9 @@
                  </div>
                  <div class="col-md-8">
                     <ul class="location_icon">
-                       <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Locations</li>
-                       <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +71 9087654321</li>
-                       <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>demo@gmail.com</li>
+                       <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Colombo 7</li>
+                       <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +71 932332321</li>
+                       <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>tango@gmail.com</li>
                     </ul>
                  </div>
                  <div class="col-md-6">
@@ -108,7 +108,7 @@
               <div class="container">
                  <div class="row">
                     <div class="col-md-12">
-                       <p>Copyright 2019 All Right Reserved By <a href="https://html.design/"> Free  html Templates</a></p>
+                       <p>Copyright 2019 All Right Reserved By <a href=""> Tango Car Service</a></p>
                     </div>
                  </div>
               </div>
