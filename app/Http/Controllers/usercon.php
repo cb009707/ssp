@@ -14,7 +14,7 @@ class usercon extends Controller
      */
     public function index()
     {
-        //
+        $users = User::paginate(10);
         return view('admin.user.index',[
             'users' => User::paginate(10),
         ]);
@@ -47,7 +47,7 @@ class usercon extends Controller
         $validated['password'] = bcrypt('password');
         User::create($validated);
 
-        return redirect()->route('user.index')->with('success', 'User successfully updated!');
+        return redirect()->route('admin.user.index')->with('success', 'User successfully updated!');
     }
 
     /**
@@ -88,8 +88,8 @@ class usercon extends Controller
 
         $user->update($validated);
 
-        return redirect()->route('user.index')->with('success', 'User successfully updated!');
-        
+        return redirect()->route('admin.user.index')->with('success', 'User successfully updated!');
+
     }
 
     /**

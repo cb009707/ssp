@@ -1,5 +1,5 @@
 <x-app-layout>
-   
+
     <div class="container mx-auto mt-40">
         <div class="space-y-10 divide-y divide-gray-900/10">
 
@@ -17,26 +17,26 @@
                     action="{{ route('booking.update', $booking->id) }}"
                     @else
                     action="{{ route('booking.store') }}"
-                    @endif 
+                    @endif
                     class="bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
 
                     @csrf
                      @if ($booking->id)
                         @method('PUT')
-                    @endif 
+                    @endif
 
                     <div class="px-4 py-6 sm:p-8">
                         <div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
-                            
+
                             <div class="col-span-full">
-                                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">
+                                <label for="nic" class="block text-sm font-medium leading-6 text-gray-900">
                                     National Identity Card Number
                                 </label>
                                 <div class="mt-2">
-                                    <input id="name" name="name" rows="3"
-                                    
-                                   
+                                    <input id="nic" name="nic" rows="3"
+
+
                                         value="{{ old('nic', $booking->nic) }}"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
@@ -48,58 +48,58 @@
 
                             </div>
 
-                     
+
                             <div class="col-span-full">
-                                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">
+                                <label for="phone_number" class="block text-sm font-medium leading-6 text-gray-900">
                                     Phone Number
                                 </label>
                                 <div class="mt-2">
                                     <input id="phone_number" name="phone_number"  rows="3"
-                                        value="{{ old('email', $booking->phone_number) }}"
+                                        value="{{ old('phone_number', $booking->phone_number) }}"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
 
                             <div class="col-span-full">
-                                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">
+                                <label for="type" class="block text-sm font-medium leading-6 text-gray-900">
                                     Type
                                 </label>
                                 <div class="mt-2">
                                     <input id="type" name="type"  rows="3"
-                                        value="{{ old('email', $booking->type) }}"
+                                        value="{{ old('type', $booking->type) }}"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
 
                             <div class="col-span-full">
-                                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">
+                                <label for="payment" class="block text-sm font-medium leading-6 text-gray-900">
                                     Payment Type
                                 </label>
                                 <div class="mt-2">
                                     <input id="payment" name="payment"  rows="3"
-                                        value="{{ old('email', $booking->payment) }}"
+                                        value="{{ old('payment', $booking->payment) }}"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
 
                             <div class="col-span-full">
-                                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">
+                                <label for="card_No" class="block text-sm font-medium leading-6 text-gray-900">
                                     Card Number
                                 </label>
                                 <div class="mt-2">
                                     <input id="card_No" name="card_No"  rows="3"
-                                        value="{{ old('email', $booking->card_No) }}"
+                                        value="{{ old('card_No', $booking->card_No) }}"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
 
                             <div class="col-span-full">
-                                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">
+                                <label for="sec_No" class="block text-sm font-medium leading-6 text-gray-900">
                                     Security Number
                                 </label>
                                 <div class="mt-2">
                                     <input id="sec_No" name="sec_No"  rows="3"
-                                        value="{{ old('email', $booking->sec_No) }}"
+                                        value="{{ old('sec_No', $booking->sec_No) }}"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
@@ -110,50 +110,50 @@
                                 </label>
                                 <div class="mt-2">
                                     <input id="service" name="service" rows="3"
-                                        value="{{ old('email', $booking->service) }}"
+                                        value="{{ old('service', $booking->service) }}"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
-                            </div>      
+                            </div>
                             <div class="col-span-full">
-                                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">
+                                <label for="address" class="block text-sm font-medium leading-6 text-gray-900">
                                     Address
                                 </label>
                                 <div class="mt-2">
                                     <input id="address" name="address" rows="3"
-                                        value="{{ old('email', $booking->address) }}"
+                                        value="{{ old('address', $booking->address) }}"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
 
                             <div class="col-span-full">
-                                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">
+                                <label for="plate" class="block text-sm font-medium leading-6 text-gray-900">
                                     Plate Number
                                 </label>
                                 <div class="mt-2">
                                     <input id="plate" name="plate"  rows="3"
-                                        value="{{ old('email', $booking->plate) }}"
+                                        value="{{ old('plate', $booking->plate) }}"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
 
                             <div class="col-span-full">
-                                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">
+                                <label for="chasis" class="block text-sm font-medium leading-6 text-gray-900">
                                     Chasis Number
                                 </label>
                                 <div class="mt-2">
                                     <input id="chasis" name="chasis"  rows="3"
-                                        value="{{ old('email', $booking->chasis) }}"
+                                        value="{{ old('chasis', $booking->chasis) }}"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>
 
                             <div class="col-span-full">
-                                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">
+                                <label for="discount" class="block text-sm font-medium leading-6 text-gray-900">
                                     Discount Number
                                 </label>
                                 <div class="mt-2">
                                     <input id="discount" name="discount"  rows="3"
-                                        value="{{ old('email', $booking->discount) }}"
+                                        value="{{ old('discount', $booking->discount) }}"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                                 </div>
                             </div>

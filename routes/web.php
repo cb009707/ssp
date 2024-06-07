@@ -2,9 +2,8 @@
 
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HomeCon;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\PlanController;
 use Illuminate\Support\Facades\Route;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -17,72 +16,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Public Routes
+Route::get("/", [HomeCon::class, "index"]);
 
+Route::view("/about", 'pages.about');
+Route::view("/contact", 'pages.contact');
+Route::view("/testimonial", 'pages.testimonial');
+Route::view("/plans", 'pages.plans');
 
-Route::get("/",[HomeCon::class,"index"]);
-
-
-
-
-
-
-
-//Route::get("/redirects",[HomeCon::class,"redirects"]);
-
-Route::get("/about",function(){
-    return view('pages.about');
+// Authenticated Routes
+Route::middleware('auth')->group(function () {
+    // Plans
+    Route::get('plans', [PlanController::class, 'index']);
+    Route::get('plans/{plan}', [PlanController::class, 'show'])->name("plans.show");
+    Route::post('subscription', [PlanController::class, 'subscription'])->name("subscription.create");
 });
 
+// Subscription Success Route
+Route::view('/subscription/success', 'subscription_success')->name('subscription.success');
 
-Route::get("/contact",function(){
-    return view('pages.contact');
-});
-
-Route::get("/testimonial",function(){
-    return view('pages.testimonial');
-});
-
- Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])
-->prefix('admin')
-->name('admin.')
-->group(function () {
-    
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-    
-    Route::resource('user', \App\Http\Controllers\usercon::class);
-    
-    Route::resource('booking', \App\Http\Controllers\BookingController::class);
-}); 
-
-
+// Booking Routes
+Route::get('/booking', [BookingController::class, 'frontEndForm'])->name('booking.form');
+Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+Route::get('/user/bookings', [BookingController::class, 'showuserbook'])->name('user-bookings');
 Route::put('/booking/{booking}', [BookingController::class, 'update'])->name('booking.update');
+Route::get('/booking/receipt/{booking}', [BookingController::class, 'receipt'])->name('booking.receipt');
+Route::get('/admin/booking', [BookingController::class, 'index'])->name('admin.booking.index');
 
-Route::get('/booking', [
-    BookingController::class,
-    'frontEndForm'
-])->name('booking.form');
+// Admin Routes
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        Route::get('/dashboard', [BookingController::class, 'getServiceAnalytics'])->name('dashboard');
+        Route::resource('user', \App\Http\Controllers\UserCon::class);
+        Route::resource('booking', \App\Http\Controllers\BookingController::class);
+        Route::get('/plans', [PlanController::class, 'frontForm'])->name('booking.form');
+    });
 
-Route::post('/booking', [
-    BookingController::class,
-    'store'
-])->name('booking.store');
+// Plan Routes
+Route::post('/plans', [PlanController::class, 'plan']);
+Route::get('/user/plan', [PlanController::class, 'front'])->name('booking.forms');
 
-// Route::resource('productcategory', \app\Http\Controllers\ProductController::class);
 
-//  Route::get('/booking',function(){
-//      $bookings = DB::table('bookings')->get();
-//      dd($bookings);
-//      return view('admin.user.userdataform');
-//  });
-
-// Route::get('/',function(){
-//          $bookings = DB::table('bookings')->get();
-//         return view('admin.user.details',[
-//                  'bookings' => $bookings]);
-//       });

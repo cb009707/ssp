@@ -247,13 +247,16 @@
                             <a class="nav-link" href="/about">About</a>
                          </li>
                          <li class="nav-item">
-                            <a class="nav-link" href="/booking">Book Now</a>
+                            <a class="nav-link" href="/booking">Book</a>
                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="/plans">Subscribe </a>
+                          </li>
                          <li class="nav-item">
                             <a class="nav-link" href="/testimonial">Testimonial</a>
                          </li>
                          <li class="nav-item">
-                            <a class="nav-link" href="/contact">Contact Us</a>
+                            <a class="nav-link" href="/contact">Contact</a>
                          </li>
                          <li class="nav-item d_none" >
                             @if (Route::has('login'))
@@ -281,6 +284,6 @@
        </div>
     </div>
  </header>
- 
+
  <!-- end header inner -->
  <!-- end header -->

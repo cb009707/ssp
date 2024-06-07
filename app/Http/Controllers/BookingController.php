@@ -7,6 +7,7 @@ use App\Http\Requests\StoreBookingRequest;
 use App\Http\Requests\UpdateBookingRequest;
 use Illuminate\Http\Request;
 
+
 class BookingController extends Controller
 {
 
@@ -15,21 +16,18 @@ class BookingController extends Controller
         return view('pages.booking');
     }
 
-
-
-
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
-        
+
         $bookings = (new Booking());
 
         if($request->has('user_id')){
             $bookings = $bookings->where('user_id', $request->user_id);
         }
-        
+
          return view('admin.booking.index', [
             'bookings' => $bookings->paginate(10),
          ]);
@@ -52,7 +50,7 @@ class BookingController extends Controller
      */
     public function store(StoreBookingRequest $request)
     {
-        Booking::create([
+        $booking = Booking::create([
             'full_name' => $request->get('full_name'),
             'nic' => $request->get('nic'),
             'phone_number' => $request->get('phone_number'),
@@ -68,9 +66,9 @@ class BookingController extends Controller
             'user_id' => auth()->user()->id
         ]);
 
-        return redirect('/');
-        
+        return redirect()->route('booking.receipt', ['booking' => $booking->id]);
     }
+
 
     /**
      * Display the specified resource.
@@ -96,9 +94,26 @@ class BookingController extends Controller
      */
     public function update(UpdateBookingRequest $request, Booking $booking)
     {
-        //
-        $booking->update($request->all());
-        return redirect()->route('admin.booking.edit', ['booking' => $booking]);
+        //$booking->update($request->all());
+        //$booking->full_name = $request->input('full_name');
+            $booking->nic = $request->input('nic');
+            $booking->phone_number = $request->input('phone_number');
+            $booking->type = $request->input('type');
+            $booking->payment = $request->input('payment');
+            $booking->card_No = $request->input('card_No');
+            $booking->sec_No = $request->input('sec_No');
+            $booking->service = $request->input('service');
+            $booking->address = $request->input('address');
+            $booking->plate = $request->input('plate');
+            $booking->chasis = $request->input('chasis');
+            $booking->discount = $request->input('discount');
+            //$booking->user_id = auth()->user()->id;
+
+            $booking->update();
+
+        //return redirect()->route('user-bookings', ['booking' => $booking]);
+        return redirect()->route('admin.booking.index', ['user_id' => $booking->user_id])
+            ->with('success', 'Booking successfully updated!');
     }
 
     /**
@@ -108,6 +123,30 @@ class BookingController extends Controller
     {
         //
         $booking->delete();
-        return redirect()->route('admin.booking.index')->with('success','Booking successfully deleted!!');
+        return redirect()->route('admin.user.index')->with('success','Booking successfully deleted!!');
     }
+
+    public function showuserbook()
+    {
+        $data['bookings']=Booking::bookuser();
+        return view('admin.booking.index',$data);
+    }
+
+    public function receipt($id)
+    {
+        $booking = Booking::findOrFail($id);
+        return view('pages.receipt', compact('booking'));
+    }
+
+    public function getServiceAnalytics()
+    {
+        $currentYear = now()->year;
+        $serviceCounts = Booking::getServiceCountsForYear($currentYear);
+
+        return view('newadmin.dashboard', [
+            'serviceCounts' => $serviceCounts,
+            'year' => $currentYear
+        ]);
+    }
+
 }

@@ -1,8 +1,9 @@
 <x-app-layout>
+    <br>
     <section class="container-form">
         <header>Booking Form</header>
         <form action="{{ route('booking.store') }}" method="POST" class="form">
-          @csrf
+            @csrf
             <div class="input-box">
                 <label class="headup">Full Name</label>
                 <input type="text" placeholder="Enter full name" name="full_name" required />
@@ -83,7 +84,7 @@
                     </div>
                     <div class="gender">
                         <input type="checkbox" id="check-other" name="service" value="Fuel Delivery"/>
-                        <label for="check-other">Fuel Delivery</label>
+                        <label for="check-other">Fuel Delivery (Only 5 litres)</label>
                     </div>
                 </div>
             </div>
